@@ -1,67 +1,130 @@
-# RTL Design & Verification Workshop
+# Day 1 – Verilog RTL Design and Functional Simulation
 
-A hands-on record of my learning journey through RTL design, Verilog HDL, functional simulation, synthesis, and digital design verification using open-source EDA tools.
+## Objective
 
-This repository documents the concepts explored, practical exercises performed, simulation results, and synthesis experiments carried out during the workshop. The objective is to build a strong understanding of the RTL-to-gate-level design flow and develop a foundation for RTL Design and Digital Verification.
-
----
-
-## 📚 Workshop Progress
-
-| Session | Topic | Status |
-|--------|-------|--------|
-| Day 1 | Verilog RTL Design & Functional Simulation | ✅ Completed |
-| Day 2 | Timing Libraries, Synthesis & Flip-Flop Coding | ✅ Completed |
-| Day 3 | Combinational & Sequential Optimization | ⏳ Upcoming |
-| Day 4 | Gate-Level Simulation & Blocking vs Non-Blocking | ⏳ Upcoming |
-| Day 5 | Synthesis Optimization Techniques | ⏳ Upcoming |
-
-More sessions will be documented as the workshop progresses.
+The goal of this experiment was to get hands-on with the basic RTL design and verification flow: writing a simple Verilog module, simulating it with Icarus Verilog (iverilog), and checking its correctness by analyzing the output waveform in GTKWave. A 2:1 Multiplexer was used as the design under test for this exercise, run inside the VSDSquadron VM environment.
 
 ---
 
-## 📂 Repository Structure
+## Contents
 
-```text
-RTL-Design-Workshop
-│
-├── README.md
-│
-├── Day 1
-│   ├── README.md
-│   ├── Netlist.png
-│   └── Simulation WF.png
-│
-└── Day 2
-    ├── README.md
-    ├── Async FF Netlist.png
-    ├── Complete Netlist.png
-    ├── DFF_waveform.png
-    ├── Flatten Netlist.png
-    ├── Hierarchial Modules.png
-    ├── SKY1300DK.png
-    └── Sub_module Ex.png
+1. Core Concepts
+2. Simulation Flow
+3. Lab Setup & Execution
+4. Multiplexer Design
+5. Conclusion
 
-    Each day contains a dedicated README describing the concepts covered, commands used, design examples, simulation/synthesis procedures, and the corresponding results.
+---
 
-🧰 Tools and Technologies
-Verilog HDL — RTL design and hardware description
-Icarus Verilog — Functional simulation
-GTKWave — Waveform visualization
-Yosys — RTL synthesis and technology mapping
-Sky130 PDK — Open-source standard-cell technology library
-Ubuntu/Linux — Workshop development environment
-🎯 Purpose of the Repository
+## 1. Core Concepts
 
-The purpose of this repository is to maintain a structured record of practical RTL design work and gradually understand the complete digital design flow.
+**Simulator**  
+A tool that runs a Verilog design against a set of test inputs in software, so its behavior can be checked before any hardware is built. It's how functional bugs get caught early.
 
-The workshop begins with writing and simulating Verilog RTL and progresses toward synthesis, standard-cell mapping, timing libraries, sequential logic, and eventually digital verification concepts.
+**Design**  
+The actual Verilog module — the RTL description of the circuit's logic and how it should behave.
 
-This repository will serve both as a learning reference and as a record of practical work completed during the RTL Design and Verification workshop.
+**Testbench**  
+A separate, non-synthesizable Verilog file whose only job is to drive inputs into the design and let us observe/verify the outputs. It applies primary inputs through a stimulus generator and checks the primary outputs through a stimulus observer, as shown below.
 
-👤 Author
+---
 
-T. Govardhini
+## 2. Simulation Flow
 
-B.Tech ECE
-Anurag University
+`iverilog` compiles the design and testbench together into a single executable. Running that executable produces a `.vcd` (Value Change Dump) file, which records every signal transition over simulated time. GTKWave reads that file and renders it as waveforms.
+
+---
+
+## 3. Lab Setup & Execution
+
+**Environment:** Ubuntu (VSDSquadron VM), working directory `~/sky130RTLDesignAndSynthesisWorkshop/verilog_files`
+
+### Step 1 — Install the tools
+
+```bash
+sudo apt install iverilog
+sudo apt install gtkwave
+
+Step 2 — Compile design + testbench
+
+```bash
+cd sky130RTLDesignAndSynthesisWorkshop/verilog_files
+iverilog good_mux.v tb_good_mux.v
+```
+
+### Step 3 — Run the simulation
+
+```bash
+./a.out
+```
+
+This generates the `.vcd` waveform file.
+
+### Step 4 — View the waveform
+
+```bash
+gtkwave tb_good_mux.vcd
+```
+
+📷 *Waveform output:*
+<img width="1920" height="983" alt="Simulation WF" src="https://github.com/user-attachments/assets/667c90ee-e220-48e5-b134-b1b3892375f1" />
+
+---
+
+### Step 5 — Synthesize with Yosys (introductory check)
+
+```bash
+yosys
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog good_mux.v
+synth -top good_mux
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+show
+```
+
+The `show` command generates a Graphviz-based schematic of the synthesized design.
+
+📷 *Netlist output:*
+<img width="1920" height="983" alt="Netlist" src="https://github.com/user-attachments/assets/520fbe35-6325-40be-8b89-83f89a5b6192" />
+
+---
+
+## 4. Multiplexer Design
+
+```verilog
+module good_mux (
+    input  i0,
+    input  i1,
+    input  sel,
+    output reg y
+);
+
+always @ (*) begin
+    if (sel)
+        y <= i1;
+    else
+        y <= i0;
+end
+
+endmodule
+```
+
+### Ports
+
+| Signal | Direction | Description             |
+| ------ | --------- | ----------------------- |
+| `i0`   | input     | Selected when `sel = 0` |
+| `i1`   | input     | Selected when `sel = 1` |
+| `sel`  | input     | Select line             |
+| `y`    | output    | Mux output              |
+
+**Behavior**
+The `always @(*)` block means the logic re-evaluates any time `i0`, `i1`, or `sel` changes. When `sel = 0`, `y` follows `i0`; when `sel = 1`, `y` follows `i1` — standard 2:1 mux behavior.
+
+---
+
+## 5. Conclusion
+
+This lab walked through the core RTL verification loop — design, testbench, compile, simulate, view — using a simple 2:1 mux as the example, and took a first look at synthesis using Yosys with the Sky130 standard cell library. The main takeaway was understanding why each piece exists: the testbench isolates verification from the design itself, and the simulator/GTKWave combo gives a way to catch logic errors before ever touching synthesis.
+
+This sets up the foundation for Day 2 onward, where synthesis and timing come into the picture in more depth.
