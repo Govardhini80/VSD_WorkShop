@@ -12,17 +12,17 @@ This repository documents the concepts explored, practical exercises performed, 
 |--------|-------|--------|
 | Day 1 | Verilog RTL Design & Functional Simulation | ✅ Completed |
 | Day 2 | Timing Libraries, Synthesis & Flip-Flop Coding | ✅ Completed |
-| Day 3 | Combinational & Sequential Optimization | ⏳ Upcoming |
-| Day 4 | Gate-Level Simulation & Blocking vs Non-Blocking | ⏳ Upcoming |
-| Day 5 | Synthesis Optimization Techniques | ⏳ Upcoming |
+| Day 3 | Combinational & Sequential Optimization |  ✅ Completed |
+| Day 4 | Gate-Level Simulation & Blocking vs Non-Blocking | ✅ Completed |
+| Day 5 | Synthesis Optimization Techniques | ✅ Completed |
 
 More sessions will be documented as the workshop progresses.
 
 ---
 
 ## 📂 Repository Structure
-
 ```text
+
 RTL-Design-Workshop
 │
 ├── README.md
@@ -32,25 +32,44 @@ RTL-Design-Workshop
 │   ├── Netlist.png
 │   └── Simulation WF.png
 │
-└── Day 2
+├── Day 2
+│   ├── README.md
+│   ├── Async FF Netlist.png
+│   ├── Complete Netlist.png
+│   ├── DFF_waveform.png
+│   ├── Flatten Netlist.png
+│   ├── Hierarchial Modules.png
+│   ├── SKY1300DK.png
+│   └── Sub_module Ex.png
+│
+├── Day 3
+│   ├── README.md
+│   └── images/
+│
+├── Day 4
+│   ├── README.md
+│   └── images/
+│
+└── Day 5
     ├── README.md
-    ├── Async FF Netlist.png
-    ├── Complete Netlist.png
-    ├── DFF_waveform.png
-    ├── Flatten Netlist.png
-    ├── Hierarchial Modules.png
-    ├── SKY1300DK.png
-    └── Sub_module Ex.png
+    └── images/
 
-    Each day contains a dedicated README describing the concepts covered, commands used, design examples, simulation/synthesis procedures, and the corresponding results.
+Each day contains a dedicated README describing the concepts covered, commands used, design examples, simulation/synthesis procedures, and the corresponding results.
+
+---
 
 🧰 Tools and Technologies
-Verilog HDL — RTL design and hardware description
-Icarus Verilog — Functional simulation
-GTKWave — Waveform visualization
-Yosys — RTL synthesis and technology mapping
-Sky130 PDK — Open-source standard-cell technology library
-Ubuntu/Linux — Workshop development environment
+
+- Verilog HDL — RTL design and hardware description
+- Icarus Verilog — Functional and gate-level simulation
+- GTKWave — Waveform visualization
+- Yosys — RTL synthesis and technology mapping
+- Sky130 PDK — Open-source standard-cell technology library
+- Ubuntu/Linux — Workshop development environment
+- Git & GitHub — Version control and repository management
+
+
+
 🎯 Purpose of the Repository
 
 The purpose of this repository is to maintain a structured record of practical RTL design work and gradually understand the complete digital design flow.
