@@ -174,11 +174,14 @@ end
 
 📊 Synthesized Netlist
 
-"Incomplete IF Netlist" (https://raw.githubusercontent.com/Govardhini80/VSD_WorkShop/main/Day_5/images/incomp_if_netlist.png)
+"Incomplete IF Netlist"
+![Incomp_if_Netlist](images/incomp_if_netlist.png)
 
 📈 Simulation Waveform
 
-"Incomplete IF Simulation" (https://raw.githubusercontent.com/Govardhini80/VSD_WorkShop/main/Day_5/images/tb_incomp_if.vcd.png)
+"Incomplete IF Simulation"
+
+![tb_incomp_if.vcd](images/tb_incomp_if.vcd.png)
 
 «⚠️ Observation: The incomplete conditional assignment can cause the output to retain its previous value, resulting in latch inference.»
 
@@ -207,7 +210,9 @@ The final possibility is still uncovered.
 
 📊 Synthesized Netlist
 
-"Incomplete IF-ELSE Netlist" (https://raw.githubusercontent.com/Govardhini80/VSD_WorkShop/main/Day_5/images/incomp_if2_netlist.png)
+"Incomplete IF-ELSE Netlist" 
+
+![incomp_if2_netlist](images/incomp_if2_netlist.png)
 
 💡 Complete Version
 
@@ -273,7 +278,9 @@ then "10" and "11" do not receive assignments.
 
 📊 Synthesized Netlist
 
-"Incomplete CASE Netlist" (https://raw.githubusercontent.com/Govardhini80/VSD_WorkShop/main/Day_5/images/incomp_case_netlist.png)
+"Incomplete CASE Netlist" 
+
+![incomp_case_netlist](images/incomp_case_netlist.png)
 
 «⚠️ Observation: Missing case branches can result in incomplete combinational logic and unintended latch inference.»
 
@@ -296,7 +303,8 @@ Now every selector value receives an output.
 
 📊 Synthesized Netlist
 
-"Complete CASE Netlist" (https://raw.githubusercontent.com/Govardhini80/VSD_WorkShop/main/Day_5/images/comp_case_netlist.png)
+"Complete CASE Netlist" 
+![comp_case_netlist](images/comp_case_netlist.png)
 
 💡 Why "default" Matters
 
@@ -339,7 +347,8 @@ Therefore, "x" can infer storage.
 
 📊 Synthesized Netlist
 
-"Partial CASE Assignment Netlist" (https://raw.githubusercontent.com/Govardhini80/VSD_WorkShop/main/Day_5/images/partial_case_assign_netlist.png)
+"Partial CASE Assignment Netlist" 
+![partial _case_assign_netlist](images/partial_case_assign_netlist.png)
 
 «🔍 Observation: Completeness needs to be checked for each output independently.»
 
@@ -379,7 +388,8 @@ Therefore, "sel = 10" can match more than one case item.
 
 📈 Simulation Waveform
 
-"CASEZ Simulation" (https://raw.githubusercontent.com/Govardhini80/VSD_WorkShop/main/Day_5/images/tb_bad_case.vcd.png)
+"CASEZ Simulation"
+![tb_bad_case.vsd](images/tb_bad_case.vcd.png)
 
 «⚠️ Observation: Wildcard patterns should be designed carefully because overlapping conditions can create unexpected selection behaviour.»
 
@@ -477,7 +487,8 @@ Multiple Inputs
 
 📈 Simulation Waveform
 
-"MUX Generate Simulation" (https://raw.githubusercontent.com/Govardhini80/VSD_WorkShop/main/Day_5/images/tb_mux_generate.vcd.png)
+"MUX Generate Simulation" 
+![tb_mux_generate.vcd](images/tb_mux_generate.vcd.png)
 
 «✅ Observation: The waveform demonstrates the selection of the required input according to the select signal.»
 
@@ -499,7 +510,8 @@ A loop can be used to generate the repeated output-selection structure.
 
 📈 Simulation Waveform
 
-"DEMUX Generate Simulation" (https://raw.githubusercontent.com/Govardhini80/VSD_WorkShop/main/Day_5/images/tb_demux_generate.vcd.png)
+"DEMUX Generate Simulation" 
+![tb_demux_generate.vcd](images/tb_demux_generate.vcd.png)
 
 «✅ Observation: The input is routed to the selected output while the remaining outputs stay inactive.»
 
@@ -561,7 +573,8 @@ endgenerate
 
 📈 RCA Simulation Waveform
 
-"RCA Simulation" (https://raw.githubusercontent.com/Govardhini80/VSD_WorkShop/main/Day_5/images/tb_rca.vcd.png)
+"RCA Simulation"
+![tb_rca.vcd.png](images/tb_rca.vcd.png)
 
 «✅ Observation: The waveform verifies the addition operation and carry propagation through the Full Adder stages.»
 
