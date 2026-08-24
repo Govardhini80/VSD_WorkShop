@@ -90,7 +90,7 @@ When "sel = 1", the output follows "i1".
 📸 RTL Waveform
 
 "Ternary MUX RTL Simulation" 
-![Ternary MUX RTL](images/ternary_mux_rtl.png)
+![Ternary MUX RTL](images/day_4_ternary_mux_rtl.png)
 
 «✅ Observation: The RTL waveform confirms the expected functional behaviour of the 2:1 MUX.»
 
@@ -109,7 +109,7 @@ sky130_fd_sc_hd__mux2_1
 📸 Synthesized Netlist
 
 "Ternary MUX Synthesized Netlist" 
-![Ternary MUX Netlist](images/ternary_mux_netlist.png)
+![Ternary MUX Netlist](images/day_4_ternary_mux_netlist.png)
 
 «🔍 Observation: The netlist shows how the simple RTL MUX description is represented using a standard-cell based implementation.»
 
@@ -124,7 +124,7 @@ The testbench was used to apply different input combinations and the resulting w
 📸 GLS Waveform
 
 "Ternary MUX Gate-Level Simulation" 
-![Ternary MUX GLS](images/ternary_mux_gls.png)
+![Ternary MUX GLS](images/day_4_ternary_mux_gls.png)
 
 «✅ Observation: The GLS waveform can be compared with the RTL waveform to verify that the synthesized MUX preserves the intended functionality.»
 
@@ -181,11 +181,30 @@ This can result in incorrect RTL simulation behaviour.
 📸 RTL Waveform
 
 "Bad MUX RTL Simulation" 
-![Bad MUX RTL](images/bad_mux_rtl.png)
+![Bad MUX RTL](images/day_4_bad_mux_rtl.png)
 
 «⚠️ Observation: Changes in the data inputs may not immediately update the output when "sel" remains unchanged.»
 
 This happens because the RTL simulator only triggers the procedural block when a signal in its sensitivity list changes.
+
+---
+
+⚙️ Synthesis
+
+The RTL design was synthesized using Yosys.
+
+During synthesis, the RTL description is converted into a hardware implementation using cells from the SKY130 standard-cell library.
+
+The bad_mux was mapped to:
+
+sky130_fd_sc_hd__mux2_1
+
+📸 Synthesized Netlist
+
+"Ternary MUX Synthesized Netlist" 
+![BAD MUX Netlist](images/day_4_bad_mux_netlist.png)
+
+«🔍 Observation: The netlist shows how the simple RTL MUX description is represented using a standard-cell based implementation.»
 
 ---
 
@@ -206,7 +225,7 @@ Synthesized Hardware Behaviour
 📸 Gate-Level Waveform
 
 "Bad MUX Gate-Level Simulation" 
-![Bad MUX GLS](images/bad_mux_gls.png)
+![Bad MUX GLS](images/day_4_bad_mux_gls.png)
 
 «🔍 Key Observation: The comparison demonstrates how careless RTL coding can result in a simulation-synthesis mismatch.»
 
@@ -272,7 +291,7 @@ Therefore, statement ordering matters when using blocking assignments.
 
 "Blocking Assignment RTL Simulation" 
 
-![Blocking Assignment RTL](images/blocking_caveat_rtl.png)
+![Blocking Assignment RTL](images/day_4_blocking_caveat_rtl.png)
 «💡 Observation: The waveform shows the behaviour of the intermediate signal and final output during RTL simulation.»
 
 ---
@@ -288,7 +307,7 @@ sky130_fd_sc_hd__o21a_1
 📸 Synthesized Netlist
 
 "Blocking Assignment Synthesized Netlist"
-![Blocking Assignment Netlist](images/blocking_caveat_netlist.png)
+![Blocking Assignment Netlist](images/day_4_blocking_caveat_netlist.png)
 
 «🔍 Observation: The synthesized netlist represents the actual combinational hardware generated from the RTL description.»
 
@@ -301,7 +320,7 @@ The synthesized netlist was simulated at the gate level.
 📸 GLS Waveform
 
 "Blocking Assignment Gate-Level Simulation"
-![Blocking Assignment GLS](images/blocking_caveat_gls.png)
+![Blocking Assignment GLS](images/day_4_blocking_caveat_gls.png)
 
 «🔎 Observation: Comparing RTL and GLS helps connect the procedural RTL description with the synthesized hardware implementation.»
 
