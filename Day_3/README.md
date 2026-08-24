@@ -100,7 +100,7 @@ A| B| Y
 
 The RTL description is mapped to an equivalent hardware implementation during synthesis.
 
-![AND Logic Optimization](images/opt_check.png)
+![AND Logic Optimization](images/day_3_opt_check.png)
 
 «💡 Observation: The synthesized result represents the hardware implementation of the AND operation.»
 
@@ -124,7 +124,7 @@ A| B| Y
 
 🔍 Synthesized Result
 
-![OR Logic Optimization](images/opt_check2.png)
+![OR Logic Optimization](images/day_3_opt_check2.png)
 
 «💡 Observation: The synthesized result shows the hardware implementation corresponding to the OR operation.»
 
@@ -152,7 +152,7 @@ A| B| C| Y
 
 🔍 Synthesized Result
 
-![Three Input AND Optimization](images/opt_check3.png)
+![Three Input AND Optimization](images/day_3_opt_check3.png)
 
 «💡 Observation: The synthesized implementation maintains the expected three-input AND functionality.»
 
@@ -204,9 +204,10 @@ This experiment demonstrates the synthesized implementation and simulation behav
 
 🔧 Synthesized Circuit
 
-<img src="images/dff_const1(netlist).png" alt="DFF Constant 1 Netlist">📈 Simulation Waveform
-
-![DFF Constant 1 Waveform](images/dff_const1.png)
+📈 Simulation Waveform
+![DFF Constant 1 Waveform](images/day_3_dff_const1.png)
+📈 Netlist
+![DFF Constant 1 Netlist](images/day_3_dff_const1(netlist).png)
 
 «💡 Observation: The synthesized circuit and waveform demonstrate the behavior of the D Flip-Flop under the given constant condition.»
 
@@ -218,9 +219,10 @@ This experiment continues the study of constant propagation in sequential logic.
 
 🔧 Synthesized Circuit
 
-<img src="images/dff_const2(netlist).png" alt="DFF Constant 2 Netlist">📈 Simulation Waveform
-
-![DFF Constant 2 Waveform](images/dff_const2.png)
+📈 Simulation Waveform
+![DFF Constant 2 Waveform](images/day_3_dff_const2.png)
+📈 Netlist
+![DFF Constant 2 Netlist](images/day_3_dff_const2(netlist).png)
 
 «💡 Observation: The waveform verifies the sequential behavior, while the synthesized diagram shows the corresponding hardware implementation.»
 
@@ -232,9 +234,10 @@ The third experiment further demonstrates the effect of constant information on 
 
 🔧 Synthesized Circuit
 
-<img src="images/dff_const3(netlist).png" alt="DFF Constant 3 Netlist">📈 Simulation Waveform
-
-![DFF Constant 3 Waveform](images/dff_const3.png)
+📈 Simulation Waveform
+![DFF Constant 3 Waveform](images/day_3_dff_const3.png)
+📈 Netlist
+![DFF Constant 3 Netlist](images/day_3_dff_const3(netlist).png)
 
 «💡 Observation: Comparing the synthesized circuit and simulation helps relate RTL behavior to the resulting hardware.»
 
@@ -264,7 +267,7 @@ A counter contains both storage elements and combinational next-state logic, mak
 
 The original counter implementation is shown below.
 
-![Original Counter](images/counter_opt.png)
+![Original Counter](images/day_3_counter_opt.png)
 
 «💡 Observation: The image represents the synthesized implementation of the original counter design.»
 
@@ -272,9 +275,8 @@ The original counter implementation is shown below.
 
 🟢 Modified Counter
 
-After modifying the RTL implementation, the resulting synthesized structure can be compared with the original design.
-
-<img src="images/counter_opt(modified).png" alt="Modified Counter">«💡 Observation: Comparing the two implementations helps demonstrate how changes in RTL coding can influence the synthesized hardware.»
+After modifying the RTL implementation, the resulting synthesized structure can be compared with the original desig.
+![Modified Counter](images/day_3_counter_opt(modified).png)
 
 ---
 
@@ -331,6 +333,3 @@ The overall design flow can be summarized as:
 
 ---
 
-🔗 Workshop Progress
-
-⬅️ "Day 2" (../Day_2/README.md)     ➡️ "Day 4" (../Day_4/README.md)
