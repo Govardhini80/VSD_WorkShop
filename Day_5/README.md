@@ -172,16 +172,23 @@ end
 "1"| "y = i1"
 "0"| No assignment ⚠️
 
-📊 Synthesized Netlist
-
-"Incomplete IF Netlist"
-![Incomp_if_Netlist](images/incomp_if_netlist.png)
 
 📈 Simulation Waveform
 
 "Incomplete IF Simulation"
 
-![tb_incomp_if.vcd](images/tb_incomp_if.vcd.png)
+![tb_incomp_if.vcd](images/day_5_tb_incomp_if.vcd.png)
+
+
+
+
+📊 Synthesized Netlist
+
+"Incomplete IF Netlist"
+![Incomp_if_Netlist](images/day_5_incomp_if_netlist.png)
+
+
+
 
 «⚠️ Observation: The incomplete conditional assignment can cause the output to retain its previous value, resulting in latch inference.»
 
@@ -208,11 +215,21 @@ The final possibility is still uncovered.
 "0"| "1"| "y = i3"
 "0"| "0"| No assignment ⚠️
 
+📈 Simulation Waveform
+
+"Incomplete IF-ELSE Simulation"
+
+![tb_incomp_if2.vcd](images/day_5_tb_incomp_if2.vcd.png)
+
+
+
 📊 Synthesized Netlist
 
 "Incomplete IF-ELSE Netlist" 
 
-![incomp_if2_netlist](images/incomp_if2_netlist.png)
+![incomp_if2_netlist](images/day_5_incomp_if2_netlist.png)
+
+
 
 💡 Complete Version
 
@@ -246,6 +263,8 @@ begin
     endcase
 end
 
+
+
 "case" is commonly used for:
 
 - 🔀 Multiplexers
@@ -276,11 +295,20 @@ end
 
 then "10" and "11" do not receive assignments.
 
+📈 Simulation Waveform
+
+"Incomplete case Simulation"
+
+![tb_incomp_case.vcd](images/day_5_tb_incomp_case.vcd.png)
+
+
+
+
 📊 Synthesized Netlist
 
 "Incomplete CASE Netlist" 
 
-![incomp_case_netlist](images/incomp_case_netlist.png)
+![incomp_case_netlist](images/day_5_incomp_case_netlist.png)
 
 «⚠️ Observation: Missing case branches can result in incomplete combinational logic and unintended latch inference.»
 
@@ -301,10 +329,20 @@ end
 
 Now every selector value receives an output.
 
+📈 Simulation Waveform
+
+"Complete Case Simulation"
+
+![tb_comp_case.vcd](images/day_5_tb_comp_case.vcd.png)
+
+
+
 📊 Synthesized Netlist
 
-"Complete CASE Netlist" 
-![comp_case_netlist](images/comp_case_netlist.png)
+"Complete case Netlist" 
+
+![comp_case_netlist](images/day_5_comp_case_netlist.png)
+
 
 💡 Why "default" Matters
 
@@ -345,10 +383,13 @@ However, "x" is not assigned when "sel = 2'b01".
 
 Therefore, "x" can infer storage.
 
+
+
+
 📊 Synthesized Netlist
 
 "Partial CASE Assignment Netlist" 
-![partial _case_assign_netlist](images/partial_case_assign_netlist.png)
+![partial _case_assign_netlist](images/day_5_partial_case_assign_netlist.png)
 
 «🔍 Observation: Completeness needs to be checked for each output independently.»
 
@@ -389,7 +430,21 @@ Therefore, "sel = 10" can match more than one case item.
 📈 Simulation Waveform
 
 "CASEZ Simulation"
-![tb_bad_case.vsd](images/tb_bad_case.vcd.png)
+![tb_bad_case.vsd](images/day_5_tb_bad_case.vcd.png)
+
+
+📊 Synthesized Netlist
+
+"CASEZ Netlist" 
+![bad _case_netlist](images/day_5_bad_case_netlist.png)
+
+
+📈 GLS Simulation Waveform
+
+"CASEZ GLS Simulation"
+![bad_case_gls](images/day_5_tb_bad_case_gls.png)
+
+
 
 «⚠️ Observation: Wildcard patterns should be designed carefully because overlapping conditions can create unexpected selection behaviour.»
 
@@ -488,7 +543,7 @@ Multiple Inputs
 📈 Simulation Waveform
 
 "MUX Generate Simulation" 
-![tb_mux_generate.vcd](images/tb_mux_generate.vcd.png)
+![tb_mux_generate.vcd](images/day_5_tb_mux_generate.vcd.png)
 
 «✅ Observation: The waveform demonstrates the selection of the required input according to the select signal.»
 
@@ -511,7 +566,15 @@ A loop can be used to generate the repeated output-selection structure.
 📈 Simulation Waveform
 
 "DEMUX Generate Simulation" 
-![tb_demux_generate.vcd](images/tb_demux_generate.vcd.png)
+![tb_demux_generate.vcd](images/day_5_tb_demux_generate.vcd.png)
+
+we will get the same output when we use case block for Demux
+📈 Simulation Waveform
+
+"DEMUX case Simulation" 
+![tb_demux_case.vcd](images/day_5_tb_demux_case,vcd.png)
+
+but using for loop will reduce no. of code lines.
 
 «✅ Observation: The input is routed to the selected output while the remaining outputs stay inactive.»
 
@@ -574,7 +637,7 @@ endgenerate
 📈 RCA Simulation Waveform
 
 "RCA Simulation"
-![tb_rca.vcd.png](images/tb_rca.vcd.png)
+![tb_rca.vcd.png](images/day_5_tb_rca.vcd.png)
 
 «✅ Observation: The waveform verifies the addition operation and carry propagation through the Full Adder stages.»
 
