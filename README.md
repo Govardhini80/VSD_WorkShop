@@ -14,7 +14,7 @@ This repository documents the concepts explored, practical exercises performed, 
 | Day 2 | Timing Libraries, Synthesis & Flip-Flop Coding | ✅ Completed |
 | Day 3 | Combinational & Sequential Optimization |  ✅ Completed |
 | Day 4 | Gate-Level Simulation & Blocking vs Non-Blocking | ✅ Completed |
-| Day 5 | Synthesis Optimization Techniques | ✅ Completed |
+| Day 5 | Ifelse,Case and Looping Blocks| ✅ Completed |
 
 More sessions will be documented as the workshop progresses.
 
