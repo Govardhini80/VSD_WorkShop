@@ -35,7 +35,7 @@ A **Multiplexer (MUX)** is a combinational circuit that selects one input from m
 
 The initial MUX implementation was examined to understand the RTL description and identify the source of the incorrect behavior.
 
-![Initial BADMUX RTL](image/badmux_before_change.v.png)
+![Initial BAD MUX RTL](images/badmux_before_change.v.png)
 
 ---
 
@@ -43,7 +43,7 @@ The initial MUX implementation was examined to understand the RTL description an
 
 The initial RTL was simulated and the output waveform was observed using GTKWave.
 
-![Initial BADMUX Simulation](image/badmux_befour_change_gtk.png)
+![Initial BADMUX Simulation](images/badmux_befour_change_gtk.png)
 
 ### 🔎 Observation
 
@@ -55,7 +55,7 @@ The simulation waveform was analyzed to identify the mismatch between the expect
 
 After identifying the issue, the RTL implementation was modified.
 
-![Corrected BADMUX RTL](image/badmux_changed.v.png)
+![Corrected BADMUX RTL](images/badmux_changed.v.png)
 
 ---
 
@@ -63,7 +63,7 @@ After identifying the issue, the RTL implementation was modified.
 
 The corrected RTL was simulated again to verify the modification.
 
-![Corrected BADMUX Simulation](image/badmux_changed_gtk.png)
+![Corrected BADMUX Simulation](images/badmux_changed_gtk.png)
 
 ### 🔎 Observation
 
@@ -83,7 +83,7 @@ This exercise demonstrates the implementation of a correctly functioning MUX and
 
 The Verilog RTL implementation of the MUX is shown below.
 
-![Good MUX RTL](image/goodmux.v.png)
+![Good MUX RTL](images/goodmux.v.png)
 
 The RTL describes the combinational relationship between the inputs, select signal and output.
 
@@ -93,7 +93,7 @@ The RTL describes the combinational relationship between the inputs, select sign
 
 A Verilog testbench was used to apply different input combinations and verify the MUX functionality.
 
-![MUX Testbench](image/goomux_tb.v.png)
+![MUX Testbench](images/goomux_tb.v.png)
 
 ---
 
@@ -101,7 +101,7 @@ A Verilog testbench was used to apply different input combinations and verify th
 
 The MUX was simulated and the resulting waveform was analyzed using GTKWave.
 
-![Good MUX Simulation](image/goodmux_gtk.png)
+![Good MUX Simulation](images/goodmux_gtk.png)
 
 ### 🔎 Observation
 
@@ -119,7 +119,7 @@ After functional verification, the MUX RTL was synthesized to obtain its gate-le
 
 The synthesized MUX is represented as a gate-level netlist.
 
-![Good MUX Netlist](image/goodmux_netlist.v.png)
+![Good MUX Netlist](images/goodmux_netlist.v.png)
 
 ---
 
@@ -127,7 +127,7 @@ The synthesized MUX is represented as a gate-level netlist.
 
 The synthesized design was also examined through its graphical netlist representation.
 
-![MUX Netlist Structure](image/netlist_goodmux.png)
+![MUX Netlist Structure](images/netlist_goodmux.png)
 
 ### 🔎 Observation
 
@@ -149,7 +149,7 @@ A **shift register** is a sequential digital circuit that stores and shifts bina
 
 The synthesized shift-register design was examined through its gate-level netlist.
 
-![Shift Register Netlist](image/good_shift%20register_netlist.png)
+![Shift Register Netlist](images/good_shift_register_netlist.png)
 
 ### 🔎 Observation
 
@@ -161,7 +161,7 @@ The netlist provides a structural representation of the synthesized shift-regist
 
 The shift register was simulated and its behavior was observed using GTKWave.
 
-![Shift Register Simulation](image/good_shift_register_gtk_wave.png)
+![Shift Register Simulation](images/good_shift_register_gtk_wave.png)
 
 ### 🔎 Observation
 
