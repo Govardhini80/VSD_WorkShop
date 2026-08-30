@@ -187,7 +187,7 @@ This stage is known as **Gate-Level Simulation (GLS)**. It helps verify the func
 
 ### 📊 Post-Synthesis Simulation
 
-![Post-Synthesis Simulation](images/post_synth_sim.vcdgls%20of%20babysoc%29.png)
+![Post-Synthesis Simulation](images/post_synth_sim_vcd.png)
 
 ### 🔎 Observation
 
