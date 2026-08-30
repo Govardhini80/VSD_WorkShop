@@ -133,7 +133,7 @@ It is based on the RISC-V instruction set architecture and forms the main proces
 
 RVMyth Reference
 
-"RVMyth Block" (images/rvmit.png)
+![RVMyth Block](images/rvmit.png)
 
 ---
 
@@ -145,7 +145,7 @@ Simulation allows us to observe the response of the design for the given testben
 
 📊 Pre-Synthesis Waveform
 
-"Pre-Synthesis Simulation" (images/pre_synth_sim.vcd.png)
+![Pre-Synthesis Simulation](images/pre_synth_sim.vcd.png)
 
 🔎 Observation
 
@@ -171,11 +171,11 @@ The synthesis reports provide information about the resulting hardware structure
 
 Statistics – 1
 
-"Synthesis Statistics 1" (images/stats_1.png)
+![Synthesis Statistics 1](images/stats_1.png)
 
 Statistics – 2
 
-"Synthesis Statistics 2" (images/stats_2.png)
+![Synthesis Statistics 2](images/stats_2.png)
 
 ---
 
@@ -187,7 +187,7 @@ The synthesized netlist represents the structural implementation of the BabySoC 
 
 🧩 BabySoC Synthesized Netlist
 
-"BabySoC Synthesized Netlist" (images/BabySOC_netlist.png)
+![BabySoC Synthesized Netlist](images/BabySOC_netlist.png)
 
 🔎 Observation
 
@@ -205,7 +205,7 @@ The synthesized clock-gating netlist provides a view of the clock-control logic 
 
 ⏱️ Clock-Gating Netlist
 
-"Clock-Gating Netlist" (images/clk_gate_babysoc_netlist.png)
+![Clock-Gating Netlist](images/clk_gate_babysoc_netlist.png)
 
 🔎 Observation
 
@@ -223,7 +223,7 @@ Unlike pre-synthesis simulation, which works with the RTL description, gate-leve
 
 📊 Post-Synthesis Simulation
 
-"Post-Synthesis Simulation" (images/post_synth_sim_vsd.png)
+![Post-Synthesis Simulation](images/post_synth_sim_vsd.png)
 
 🔎 Observation
 
@@ -241,7 +241,7 @@ The RTL waveform represents the expected behavior of the original design, while 
 
 📈 Waveform Comparison
 
-"RTL vs Post-Synthesis Comparison" (images/pre_synth_vs_post_synth.png)
+![RTL vs Post-Synthesis Comparison](images/pre_synth_vs_post_synth.png)
 
 🔎 Observation
 
