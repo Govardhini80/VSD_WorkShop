@@ -26,6 +26,7 @@ The main objective is to understand how the design evolves through the synthesis
 🏭 ASIC Design Flow
 
 A typical ASIC design flow transforms a hardware specification into a physical chip.
+``` text
 
 Specification
       ↓
@@ -52,11 +53,12 @@ Physical Verification
 Tapeout
       ↓
 Fabrication
+```
 
 🔬 Scope of This BabySoC Lab
 
 This lab focuses mainly on the RTL-to-Gate-Level portion of the ASIC flow:
-
+``` text
 RTL Design
      ↓
 Pre-Synthesis Simulation
@@ -72,11 +74,12 @@ Gate-Level Netlist
 Post-Synthesis / Gate-Level Simulation
      ↓
 RTL vs Gate-Level Verification
+```
 
 ---
 
 📊 Current Progress
-
+``` table 
 ASIC Design Stage| Status
 RTL Design Understanding| ✅ Completed
 Pre-Synthesis Simulation| ✅ Completed
@@ -88,6 +91,7 @@ Clock-Gating Analysis| ✅ Completed
 Post-Synthesis / Gate-Level Simulation| ✅ Completed
 RTL vs Gate-Level Verification| ✅ Completed
 Physical Design| ⏳ Future Scope
+```
 
 ---
 
@@ -359,6 +363,7 @@ Through this BabySoC lab, I gained practical understanding of:
 
 The complete BabySoC flow explored in this lab can be summarized as:
 
+``` text
 ┌──────────────────────────────┐
 │          RTL Design          │
 └──────────────┬───────────────┘
@@ -392,6 +397,7 @@ The complete BabySoC flow explored in this lab can be summarized as:
 ┌──────────────────────────────┐
 │  RTL vs GLS Verification     │
 └──────────────────────────────┘
+```
 
 ---
 
