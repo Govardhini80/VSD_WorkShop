@@ -78,20 +78,21 @@ RTL vs Gate-Level Verification
 
 ---
 
-📊 Current Progress
-``` table 
-ASIC Design Stage| Status
-RTL Design Understanding| ✅ Completed
-Pre-Synthesis Simulation| ✅ Completed
-Logic Synthesis| ✅ Completed
-Synthesis Statistics| ✅ Completed
-Technology Mapping| ✅ Completed
-Gate-Level Netlist Generation| ✅ Completed
-Clock-Gating Analysis| ✅ Completed
-Post-Synthesis / Gate-Level Simulation| ✅ Completed
-RTL vs Gate-Level Verification| ✅ Completed
-Physical Design| ⏳ Future Scope
-```
+📊 Current Progress:
+
+|ASIC Design Stage| Status|
+|-----------------|-------|
+|RTL Design Understanding| ✅ Completed |
+|Pre-Synthesis Simulation| ✅ Completed |
+|Logic Synthesis| ✅ Completed |
+|Synthesis Statistics| ✅ Completed |
+|Technology Mapping| ✅ Completed |
+|Gate-Level Netlist Generation| ✅ Completed |
+|Clock-Gating Analysis| ✅ Completed |
+|Post-Synthesis / Gate-Level Simulation| ✅ Completed |
+|RTL vs Gate-Level Verification| ✅ Completed |
+|Physical Design| ⏳ Future Scope |
+
 
 ---
 
@@ -406,7 +407,7 @@ The complete BabySoC flow explored in this lab can be summarized as:
 The current lab focuses on the RTL-to-Gate-Level portion of the ASIC design flow.
 
 Further stages that can be explored include:
-
+```
 Gate-Level Netlist
        ↓
 Floorplanning
@@ -420,7 +421,7 @@ Routing
 Physical Verification
        ↓
 Tapeout
-
+```
 These stages would extend the BabySoC study from logical implementation toward complete physical ASIC implementation.
 
 ---
