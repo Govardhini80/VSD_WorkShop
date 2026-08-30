@@ -1,18 +1,14 @@
-
-# 🧩 BabySoC – RTL to Gate-Level Simulation
+🧩 BabySoC 
 
 <p align="center">
-  <b>VLSI Design & ASIC Implementation Lab</b><br>
-  RTL Design → Simulation → Synthesis → Netlist → Gate-Level Verification
-</p>
+  <b>VLSI Design & Implementation Lab</b><br>
+  
 
----
-
-## 📌 Overview
+📌 Overview
 
 BabySoC is a compact System-on-Chip design used to understand the transformation of a hardware design from RTL description to a synthesized gate-level implementation.
 
-This lab explores the important stages of the digital ASIC design flow, including:
+This lab explores important stages of the digital ASIC design flow, including:
 
 - RTL design understanding
 - Pre-synthesis simulation
@@ -27,13 +23,82 @@ The main objective is to understand how the design evolves through the synthesis
 
 ---
 
-# 🏗️ BabySoC Architecture
+🏭 ASIC Design Flow
+
+A typical ASIC design flow transforms a hardware specification into a physical chip.
+
+Specification
+      ↓
+Architecture
+      ↓
+RTL Design
+      ↓
+Functional Verification
+      ↓
+Logic Synthesis
+      ↓
+Gate-Level Netlist
+      ↓
+Floorplanning
+      ↓
+Placement
+      ↓
+Clock Tree Synthesis
+      ↓
+Routing
+      ↓
+Physical Verification
+      ↓
+Tapeout
+      ↓
+Fabrication
+
+🔬 Scope of This BabySoC Lab
+
+This lab focuses mainly on the RTL-to-Gate-Level portion of the ASIC flow:
+
+RTL Design
+     ↓
+Pre-Synthesis Simulation
+     ↓
+Logic Synthesis
+     ↓
+Synthesis Statistics
+     ↓
+Technology Mapping
+     ↓
+Gate-Level Netlist
+     ↓
+Post-Synthesis / Gate-Level Simulation
+     ↓
+RTL vs Gate-Level Verification
+
+---
+
+📊 Current Progress
+
+ASIC Design Stage| Status
+RTL Design Understanding| ✅ Completed
+Pre-Synthesis Simulation| ✅ Completed
+Logic Synthesis| ✅ Completed
+Synthesis Statistics| ✅ Completed
+Technology Mapping| ✅ Completed
+Gate-Level Netlist Generation| ✅ Completed
+Clock-Gating Analysis| ✅ Completed
+Post-Synthesis / Gate-Level Simulation| ✅ Completed
+RTL vs Gate-Level Verification| ✅ Completed
+Physical Design| ⏳ Future Scope
+
+---
+
+1️⃣ RTL Design
+
+The first stage of the BabySoC implementation is understanding the RTL design and its major functional blocks.
 
 BabySoC integrates multiple functional blocks to form a compact System-on-Chip.
 
-The major components involved are:
+🏗️ BabySoC Architecture
 
-```text
                     ┌───────────────────┐
                     │       PLL         │
                     │ Clock Generation  │
@@ -55,57 +120,34 @@ The major components involved are:
                               │
                               ▼
                             OUT
-```
 
 The RVMyth block provides the main digital processing functionality, while the PLL and DAC support clock generation and digital-to-analog conversion within the BabySoC.
+
 ---
 
-# 🔍 RVMyth – RISC-V Based Processor
+🔍 RVMyth – RISC-V Based Processor
 
 RVMyth is the digital processing core used in the BabySoC design.
 
 It is based on the RISC-V instruction set architecture and forms the main processing element of the SoC. The processor interacts with the surrounding blocks to provide the digital data required by the system.
 
-### RVMyth Reference
+RVMyth Reference
 
-![RVMyth Block](images/rvmit.png)
+"RVMyth Block" (images/rvmit.png)
 
 ---
 
-# 🔄 BabySoC Design Flow
-
-The BabySoC lab follows a sequence of design, verification and synthesis steps:
-
-```text
-RTL Design
-     ↓
-Pre-Synthesis Simulation
-     ↓
-Logic Synthesis
-     ↓
-Synthesis Statistics
-     ↓
-Synthesized Netlist
-     ↓
-Post-Synthesis / Gate-Level Simulation
-     ↓
-RTL vs Gate-Level Comparison
-
-
-```
-This flow helps in understanding the transformation from an RTL description into a synthesized hardware implementation and provides a method for verifying the resulting design.
-
-# 1️⃣ Pre-Synthesis Simulation
+2️⃣ Pre-Synthesis Simulation
 
 Before synthesis, the RTL design is simulated to verify its intended functional behavior.
 
 Simulation allows us to observe the response of the design for the given testbench and provides a reference waveform that can later be compared with the gate-level simulation.
 
-### 📊 Pre-Synthesis Waveform
+📊 Pre-Synthesis Waveform
 
-![Pre-Synthesis Simulation](images/pre_synth_sim.vcd.png)
+"Pre-Synthesis Simulation" (images/pre_synth_sim.vcd.png)
 
-### 🔎 Observation
+🔎 Observation
 
 The waveform shows the behavior of the BabySoC design at the RTL level before synthesis.
 
@@ -113,7 +155,7 @@ This waveform serves as the reference for checking whether the synthesized imple
 
 ---
 
-# 2️⃣ Logic Synthesis
+3️⃣ Logic Synthesis
 
 After successful RTL simulation, the design is taken through the logic synthesis stage.
 
@@ -123,30 +165,31 @@ The synthesis process also performs logic optimization and technology mapping to
 
 ---
 
-## 📊 Synthesis Statistics
+📊 Synthesis Statistics
 
 The synthesis reports provide information about the resulting hardware structure and give an indication of the complexity of the synthesized design.
 
-### Statistics – 1
+Statistics – 1
 
-![Synthesis Statistics 1](images/stats_1.png)
+"Synthesis Statistics 1" (images/stats_1.png)
 
-### Statistics – 2
+Statistics – 2
 
-![Synthesis Statistics 2](images/stats_2.png)
+"Synthesis Statistics 2" (images/stats_2.png)
+
 ---
 
-# 3️⃣ Synthesized Netlist
+4️⃣ Synthesized Gate-Level Netlist
 
 After logic synthesis, the RTL design is transformed into a gate-level netlist.
 
 The synthesized netlist represents the structural implementation of the BabySoC using interconnected logic cells from the target technology library.
 
-### 🧩 BabySoC Synthesized Netlist
+🧩 BabySoC Synthesized Netlist
 
-![BabySoC Synthesized Netlist](images/BabySOC_netlist.png)
+"BabySoC Synthesized Netlist" (images/BabySOC_netlist.png)
 
-### 🔎 Observation
+🔎 Observation
 
 The synthesized netlist provides a structural view of the BabySoC after the synthesis process.
 
@@ -154,42 +197,35 @@ It shows how the original RTL functionality has been mapped into a network of ha
 
 ---
 
-# 4️⃣ Clock-Gating Netlist
+5️⃣ Clock-Gating Netlist
 
 Clock gating is used in digital designs to control unnecessary clock activity and can help reduce dynamic power consumption.
 
 The synthesized clock-gating netlist provides a view of the clock-control logic present in the BabySoC implementation.
 
-### ⏱️ Clock-Gating Netlist
+⏱️ Clock-Gating Netlist
 
-![Clock-Gating Netlist](images/clk_gate_babysoc_netlist.png)
+"Clock-Gating Netlist" (images/clk_gate_babysoc_netlist.png)
 
-### 🔎 Observation
+🔎 Observation
 
 The netlist shows the clock-gating structure introduced in the synthesized implementation and provides a structural view of the clock-control logic.
 
 ---
 
-# 5️⃣ Post-Synthesis / Gate-Level Simulation
+6️⃣ Post-Synthesis / Gate-Level Simulation
 
 After synthesis, the generated gate-level implementation is simulated to verify its behavior.
 
-This process is known as **Gate-Level Simulation (GLS)**.
+This stage is known as Gate-Level Simulation (GLS).
 
 Unlike pre-synthesis simulation, which works with the RTL description, gate-level simulation uses the synthesized netlist to verify the implemented logic.
----
 
-# 5️⃣ Post-Synthesis / Gate-Level Simulation
+📊 Post-Synthesis Simulation
 
-After synthesis, the generated gate-level implementation is simulated to verify its behavior.
+"Post-Synthesis Simulation" (images/post_synth_sim_vsd.png)
 
-This stage is known as **Gate-Level Simulation (GLS)**. It helps verify the functionality of the synthesized design using the generated gate-level representation.
-
-### 📊 Post-Synthesis Simulation
-
-![Post-Synthesis Simulation](images/post_synth_sim_vsd.png)
-
-### 🔎 Observation
+🔎 Observation
 
 The post-synthesis waveform shows the behavior of the BabySoC after synthesis.
 
@@ -197,17 +233,17 @@ The waveform can be compared with the pre-synthesis simulation to check whether 
 
 ---
 
-# 6️⃣ RTL vs Post-Synthesis Comparison ⭐
+7️⃣ RTL vs Post-Synthesis Comparison ⭐
 
 Comparing the pre-synthesis and post-synthesis simulations is an important verification step.
 
 The RTL waveform represents the expected behavior of the original design, while the post-synthesis waveform represents the behavior of the synthesized gate-level implementation.
 
-### 📈 Waveform Comparison
+📈 Waveform Comparison
 
-![RTL vs Post-Synthesis Comparison](images/pre_synth_vs_post_synth.png)
+"RTL vs Post-Synthesis Comparison" (images/pre_synth_vs_post_synth.png)
 
-### 🔎 Observation
+🔎 Observation
 
 The pre-synthesis and post-synthesis waveforms show consistent functional behavior for the applied testbench.
 
@@ -215,36 +251,114 @@ This indicates that the synthesis process has transformed the RTL into a gate-le
 
 ---
 
-# 🧠 Key Concepts Learned
+💻 Important Commands
 
-| Concept | Understanding |
-|---|---|
-| RTL Design | Describes the intended hardware behavior |
-| Pre-Synthesis Simulation | Verifies the RTL functionality |
-| Logic Synthesis | Converts RTL into a gate-level representation |
-| Technology Mapping | Maps logic to cells from the target library |
-| Netlist | Represents the structural hardware implementation |
-| Clock Gating | Controls unnecessary clock activity |
-| Gate-Level Simulation | Verifies the synthesized implementation |
-| Waveform Comparison | Checks functional consistency before and after synthesis |
+The following commands are useful during the BabySoC simulation, synthesis and gate-level verification flow.
+
+▶️ Compile RTL
+
+iverilog <rtl_files> <testbench_file>
+
+▶️ Run Simulation
+
+./a.out
+
+📊 Open Waveform
+
+gtkwave <waveform_file>.vcd
+
+▶️  Commands used in Synthesis in yosys
+
+read_verilog
+Reads the Verilog RTL source files into Yosys.
+
+dfflibmap
+Maps Yosys flip-flop representations to suitable flip-flop cells from the target standard-cell library.
+
+opt
+Performs logic optimizations such as constant propagation and removal of redundant logic.
+
+abc
+Performs logic optimization and technology mapping using the SKY130 Liberty library.
+
+show
+Generates a graphical representation of the selected design or module.
+
+flatten
+Removes module hierarchy by incorporating lower-level module logic into the parent module.
+
+setundef -zero
+Converts undefined values in the synthesized representation to logic zero.
+
+clean -purge
+Removes unused and redundant objects from the design.
+
+rename -enumerate
+Renames generated objects systematically.
+
+write_verilog
+Writes the resulting synthesized design as a Verilog gate-level netlist.
+
+🧪 Compile Gate-Level Netlist
+
+iverilog  <netlist_file> <testbench_file> <library_file>
+
+▶️ Run Gate-Level Simulation
+
+./a.out
+
+«Note: File names and command options may vary depending on the exact BabySoC setup and directory structure used during the lab.»
 
 ---
 
-# 🛠️ Tools & Technologies
+🛠️ Tools & Technologies
 
-- **Verilog HDL** – Hardware description
-- **Icarus Verilog** – Simulation
-- **GTKWave** – Waveform visualization
-- **Yosys** – Logic synthesis
-- **SKY130** – Target standard-cell technology
+Tool / Technology| Purpose
+Verilog HDL| Hardware description
+Icarus Verilog| RTL and gate-level simulation
+GTKWave| Waveform visualization
+Yosys| Logic synthesis
+SKY130| Target standard-cell technology
 
 ---
 
-# 📈 Implementation Flow Summary
+🧠 Key Concepts Learned
+
+Concept| Understanding
+RTL Design| Describes the intended hardware behavior
+ASIC Design Flow| Defines the overall process of converting RTL into a physical chip
+Pre-Synthesis Simulation| Verifies the RTL functionality
+Logic Synthesis| Converts RTL into a gate-level representation
+Technology Mapping| Maps logic to cells from the target library
+Netlist| Represents the structural hardware implementation
+Clock Gating| Controls unnecessary clock activity
+Gate-Level Simulation| Verifies the synthesized implementation
+Waveform Comparison| Checks functional consistency before and after synthesis
+
+---
+
+🎯 Learning Outcomes
+
+Through this BabySoC lab, I gained practical understanding of:
+
+- The basic architecture of a System-on-Chip.
+- The role of the RVMyth processor within the BabySoC.
+- The overall ASIC design flow.
+- RTL-level functional simulation.
+- Logic synthesis and technology mapping.
+- Interpretation of synthesis statistics.
+- Understanding synthesized gate-level netlists.
+- The purpose of clock-gating logic.
+- Gate-Level Simulation (GLS).
+- Comparison of RTL and synthesized gate-level waveforms.
+- The importance of functional verification after synthesis.
+
+---
+
+📈 Implementation Flow Summary
 
 The complete BabySoC flow explored in this lab can be summarized as:
 
-```text
 ┌──────────────────────────────┐
 │          RTL Design          │
 └──────────────┬───────────────┘
@@ -279,49 +393,36 @@ The complete BabySoC flow explored in this lab can be summarized as:
 │  RTL vs GLS Verification     │
 └──────────────────────────────┘
 
-```
+---
 
-  ---
+🚀 Future Scope
 
-# 🎯 Learning Outcomes
+The current lab focuses on the RTL-to-Gate-Level portion of the ASIC design flow.
 
-Through this BabySoC lab, I gained practical understanding of:
+Further stages that can be explored include:
 
-- The basic architecture of a System-on-Chip.
-- The role of the RVMyth processor within the BabySoC.
-- RTL-level functional simulation.
-- Logic synthesis and technology mapping.
-- Interpretation of synthesis statistics.
-- Understanding synthesized gate-level netlists.
-- The purpose of clock-gating logic.
-- Gate-Level Simulation (GLS).
-- Comparing RTL and post-synthesis waveforms for functional verification.
+Gate-Level Netlist
+       ↓
+Floorplanning
+       ↓
+Placement
+       ↓
+Clock Tree Synthesis
+       ↓
+Routing
+       ↓
+Physical Verification
+       ↓
+Tapeout
+
+These stages would extend the BabySoC study from logical implementation toward complete physical ASIC implementation.
 
 ---
 
-# 💡 Key Takeaways
+🏁 Conclusion
 
-> **RTL describes the intended functionality of the hardware, while synthesis transforms that functionality into a gate-level implementation.**
+The BabySoC lab provided practical exposure to the transformation of an RTL design into a synthesized gate-level implementation.
 
-The BabySoC lab demonstrates the transition:
+The successful comparison between pre-synthesis and post-synthesis simulations demonstrates that the synthesized design preserves the intended functional behavior for the applied testbench.
 
-**RTL → Simulation → Synthesis → Netlist → Gate-Level Verification**
-
-The comparison between pre-synthesis and post-synthesis simulations highlights the importance of verification at different stages of the digital design flow.
-
----
-
-# 🏁 Conclusion
-
-The BabySoC lab provided practical exposure to the RTL-to-gate-level design flow.
-
-Starting from RTL simulation, the design was synthesized into a gate-level representation, followed by examination of synthesis statistics and netlists. The synthesized implementation was then verified through Gate-Level Simulation.
-
-This exercise helped in understanding how a digital design moves from **RTL description to synthesized hardware** while maintaining the intended functionality through the design flow.
-
----
-
-<p align="center">
-  <b>✨ BabySoC Lab — From RTL to Gate-Level Verification ✨</b>
-</p>
-
+This flow establishes a foundation for understanding larger RTL-to-GDSII ASIC design methodologies.
