@@ -26,4 +26,7 @@ Explore each phase of the RTL-to-GDSII and signoff flow below:
 * [`gls/`](gls/) - Gate-Level Simulation reports and waveforms.
 * [`physical_design/`](physical_design/) - OpenLane floorplanning, placement, and routing layouts.
 * [`sta/`](sta/) - Automated multi-corner PVT signoff scripts and 16-corner results (`summary.csv`).
-*
+## 🎥 Project Video Presentation
+You can watch the full walkthrough of the project repository and implementation here:
+[👉 Click Here to Watch the Project Presentation](https://drive.google.com/file/d/1uXn8UjRsNfRAvtEaPelE9Jh71zenvyPu/view?usp=drivesdk)
+
